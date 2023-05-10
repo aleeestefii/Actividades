@@ -52,7 +52,6 @@ def draw_circle(start, end):  #Aqui para realizar un ciorculo se utilizo la oper
     down()
     begin_fill()
     circle(radio)
-
     end_fill()
         
 def rectangle(start, end):
