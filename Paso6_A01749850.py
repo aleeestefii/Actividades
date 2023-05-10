@@ -43,6 +43,16 @@ def circle(start, end):
         forward(circle / 360)
         left(1)
 """
+
+def draw_circle(start, end):  #Aqui para realizar un ciorculo se utilizo la operacion del radio para que pudiera tener un punto de partidas y realmente dibujara algo y no solo girara
+    """Draw circle from start to end."""
+    radio = ((end.x - start.x) ** 2 + (end.y - start.y) ** 2) ** 0.5
+    up()
+    goto(start.x, start.y - radio)
+    down()
+    begin_fill()
+    circle(radio)
+    end_fill()
         
 def rectangle(start, end):
     """Draw rectangle from start to end."""
