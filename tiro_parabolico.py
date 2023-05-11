@@ -16,7 +16,7 @@ from freegames import vector
 ball = vector(-200, -200)
 speed = vector(0, 0)
 targets = []
-
+score = 0#I added a new variable
 
 def tap(x, y):
     """Respond to screen tap."""
@@ -67,15 +67,26 @@ def move():
     for target in dupe:
         if abs(target - ball) > 13:
             targets.append(target)
+        else:
+                global score
+                score+=1 # Increment the score when a target is hit, so it never ends
+                
 
     draw()
 
     for target in targets:
         if not inside(target):
-            return
+            target.x=200
+            target.y=randrange(-150,150)#I create a target-off screen with a new y-coordinate 
 
-    ontimer(move, 5) # de igual manera se modifica el numero para abajo por 
-                     # la direccion en la que se mueve
+    ontimer(move, 50) # de igual manera se modifica el numero para abajo por 
+                     # la direccion en la que se mueve #Lo cambie por 50
+#I added teh def score                      
+def show_score():
+    """ To Display the current score."""
+    goto(-190, 180)
+    color('black')
+    write(f"Score: {score}", align='left')
 
 setup(420, 420, 370, 0)
 hideturtle()
@@ -83,4 +94,5 @@ up()
 tracer(False)
 onscreenclick(tap)
 move()
+show_score()
 done()
