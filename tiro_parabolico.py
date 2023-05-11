@@ -55,10 +55,10 @@ def move():
         targets.append(target)
 
     for target in targets:
-        target.x -= 0.5
+        target.x -= 0.35
 
     if inside(ball):
-        speed.y -= 0.35
+        speed.y -= 0.15 # se modifica hacia abajo la velocidad pues se realiza un tiro parabolico
         ball.move(speed)
 
     dupe = targets.copy()
@@ -74,8 +74,8 @@ def move():
         if not inside(target):
             return
 
-    ontimer(move, 50)
-
+    ontimer(move, 5) # de igual manera se modifica el numero para abajo por 
+                     # la direccion en la que se mueve
 
 setup(420, 420, 370, 0)
 hideturtle()
