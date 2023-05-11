@@ -9,10 +9,14 @@ Exercises
 """
 
 from random import randrange
+import random #se importa random para poder elegir un color al azar
 from turtle import *
 
 from freegames import square, vector
 
+colores = ['orange', 'yellow', 'green', 'blue', 'purple'] # se crea la variante de colores para agregar colores distintos
+snake_color = random.choice(colores) # se crean dos variables, una para la serpiente
+food_color = random.choice(colores) # otra para la comida
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
