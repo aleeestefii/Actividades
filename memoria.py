@@ -18,7 +18,10 @@ car = path('car.gif')
 tiles = list(range(32)) * 2
 state = {'mark': None}
 hide = [True] * 64
-
+tiles_hidden = 64
+taps = 0 # Se crea una variable que permita
+         # contar el numero de taps (clicks)
+mensaje = "¡Felicidades, has ganado el juego!"
 
 def square(x, y):
     """Draw white square with black outline at (x, y)."""
@@ -45,6 +48,10 @@ def xy(count):
 
 def tap(x, y):
     """Update mark and hidden tiles based on tap."""
+    global taps # se usa la variable de global para llamar taps
+    global tiles_hidden
+    taps += 1
+    print("Taps: ", taps)
     spot = index(x, y)
     mark = state['mark']
 
@@ -54,7 +61,7 @@ def tap(x, y):
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
-
+        tiles_hidden -= 2
 
 def draw():
     """Draw image and tiles."""
@@ -76,6 +83,10 @@ def draw():
         goto(x + 2, y)
         color('black')
         write(tiles[mark], font=('Arial', 30, 'normal'))
+
+    if tiles_hidden == 0:
+        textinput("Ganaste!", mensaje)
+        exit()
 
     update()
     ontimer(draw, 100)
