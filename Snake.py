@@ -22,7 +22,7 @@ snake = [vector(10, 0)]
 aim = vector(0, -10)
 
 
-def change(x, y):
+def change(x, y): 
     """Change snake direction."""
     aim.x = x
     aim.y = y
@@ -60,7 +60,14 @@ def move():
     square(food.x, food.y, 9, 'green')
     update()
     ontimer(move, 100)
+    
+#To move the food
+def movefood():
+    food.x= randrange(-15,15)*10
+    food.y= randrange(-15,15)*10
+    ontimer(movefood,4000) #4secs
 
+# "Move the food onto a random direction"
 
 setup(420, 420, 370, 0)
 hideturtle()
@@ -71,4 +78,5 @@ onkey(lambda: change(-10, 0), 'Left')
 onkey(lambda: change(0, 10), 'Up')
 onkey(lambda: change(0, -10), 'Down')
 move()
+movefood()#we add the movefood() function
 done()
