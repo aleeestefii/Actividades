@@ -132,11 +132,11 @@ def move():
     update()
 
     for point, course in ghosts:
-        if abs(pacman - point) < 10:
+        if abs(pacman - point) < 10:#También lo modifique acá(velocidad)
             return
 
     ontimer(move, 10)
-
+# Cambié la velocidad en que los fantasmas se mueven, estos osn mas agiles para encontrar la punto amarillo
 def change(x, y):
     "Change pacman aim if valid."
     if valid(pacman + vector(x, y)):
