@@ -61,13 +61,13 @@ def move():
     update()
     ontimer(move, 100)
     
-#To move the food
+#función para que la comida pueda moverse
 def movefood():
     food.x= randrange(-15,15)*10
     food.y= randrange(-15,15)*10
     ontimer(movefood,4000) #4secs
 
-# "Move the food onto a random direction"
+
 
 setup(420, 420, 370, 0)
 hideturtle()
@@ -78,5 +78,5 @@ onkey(lambda: change(-10, 0), 'Left')
 onkey(lambda: change(0, 10), 'Up')
 onkey(lambda: change(0, -10), 'Down')
 move()
-movefood()#se añade aquí, para qeu se ejecute la función
+movefood()#se añade aquí, para que se ejecute la función
 done()
