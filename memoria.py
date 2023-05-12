@@ -11,7 +11,7 @@ letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
            'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X',
            'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X',
            'Y', 'Z', 'A', 'B', 'C', 'D', 'E', 'F',
-           'Y', 'Z', 'A', 'B', 'C', 'D', 'E', 'F'] #intead of usingb numbers I added letter, and in order to have 64 argumentos i repeated some letters 
+           'Y', 'Z', 'A', 'B', 'C', 'D', 'E', 'F'] #en vez de usar numeros, use letras. Igualmente, para que la matriz fuera de 64, repetí letras. 
 state = {'mark': None}
 hide = [True] * 64
 tiles_hidden = 64
@@ -51,7 +51,7 @@ def tap(x, y):
     spot = index(x, y)
     mark = state['mark']
 
-    if mark is None or mark == spot or letters[mark] != letters[spot]:#also replaced the tiles variable with a letters variable
+    if mark is None or mark == spot or letters[mark] != letters[spot]:#como la variable de 'tiles' cambió a letters, igual las funciones o parte dle código que contenía info. de 'tiles'
         state['mark'] = spot
         
         
