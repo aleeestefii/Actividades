@@ -16,7 +16,7 @@ from freegames import vector
 ball = vector(-200, -200)
 speed = vector(0, 0)
 targets = []
-score = 0#I added a new variable
+score = 0#se añadió la variable score
 
 def tap(x, y):
     """Respond to screen tap."""
@@ -81,7 +81,7 @@ def move():
 
     ontimer(move, 50) # de igual manera se modifica el numero para abajo por 
                      # la direccion en la que se mueve #Lo cambie por 50
-#I added teh def score                      
+#Se añadió una función de show_score                    
 def show_score():
     """ To Display the current score."""
     goto(-190, 180)
