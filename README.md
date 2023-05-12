@@ -1,6 +1,5 @@
-# Actividades
-En la primera actividad nos dividimos los pasos 5 y 6, como indicaba en las instrucciones.
-El paso 5 lo programó Alexei y el paso 6 lo realizó Estefanía.
+# Repositorio Entrega
 
+Esta semana tec aprendimos a modificar y aprender como funciona y se programa un videojuego. Con la ayuda de librerias como 'random2', 'freegames' hicieron posible que los códigos pudieran ejecutarse
 
 
