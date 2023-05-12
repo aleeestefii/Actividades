@@ -69,15 +69,15 @@ def move():
             targets.append(target)
         else:
                 global score
-                score+=1 # Increment the score when a target is hit, so it never ends
-                
+                score+=1 # Se incrementa el score para cuando el objetivo sea golpeado, para que en vez de que se pare
+                # cuando los objetivos lleguen al fin, este no se acabe. 
 
     draw()
 
     for target in targets:
         if not inside(target):
             target.x=200
-            target.y=randrange(-150,150)#I create a target-off screen with a new y-coordinate 
+            target.y=randrange(-150,150)#Añadí un objetivo no válido, con una nueva coordenada -y
 
     ontimer(move, 50) # de igual manera se modifica el numero para abajo por 
                      # la direccion en la que se mueve #Lo cambie por 50
